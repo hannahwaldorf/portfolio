@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannah Waldorf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#4A5240;
+    --rust:#C1693C;
+    --mustard:#D9A441;
+    --cream:#F5EDE1;
+    --clay:#8B6F5C;
+    --ink:#2E2A24;
+    --max-w: 1080px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+    font-weight:400;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 32px;}
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid rgba(46,42,36,0.1);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:22px; padding-bottom:22px;
+  }
+  .logo{font-family:'Fraunces', serif; font-size:1.3rem; color:var(--rust); font-weight:600;}
+  .nav-links{display:flex; gap:36px; font-size:0.95rem; letter-spacing:0.02em;}
+  .nav-links a{position:relative; padding-bottom:4px;}
+  .nav-links a::after{
+    content:''; position:absolute; left:0; bottom:0; width:0; height:1.5px;
+    background:var(--rust); transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer;}
+  .nav-toggle span{width:24px; height:2px; background:var(--ink);}
+
+  /* HERO */
+  .hero{
+    background:var(--olive);
+    color:var(--cream);
+    padding:120px 0 100px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    right:-120px; top:-120px;
+    width:380px; height:380px;
+    border-radius:50%;
+    background:radial-gradient(circle, rgba(217,164,65,0.25), transparent 70%);
+  }
+  .hero .wrap{position:relative; text-align:center;}
+  .hero h1{margin-left:auto; margin-right:auto;}
+  .hero p.lead{margin-left:auto; margin-right:auto;}
+  .eyebrow{
+    font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--mustard); margin-bottom:18px; display:block;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 5vw, 3.6rem);
+    line-height:1.1;
+    max-width:760px;
+    margin-bottom:28px;
+  }
+  .hero p.lead{
+    max-width:540px;
+    font-size:1.1rem;
+    color:rgba(245,237,225,0.85);
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-block;
+    border:1.5px solid var(--mustard);
+    color:var(--mustard);
+    padding:13px 30px;
+    border-radius:2px;
+    font-size:0.95rem;
+    letter-spacing:0.03em;
+    transition:all .25s ease;
+  }
+  .btn:hover{background:var(--mustard); color:var(--olive);}
+  .btn.solid{
+    background:var(--rust); border-color:var(--rust); color:var(--cream);
+  }
+  .btn.solid:hover{background:#a8552c; border-color:#a8552c; color:var(--cream);}
+
+  /* ABOUT */
+  .about{
+    padding:100px 0;
+    background:var(--cream);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap:64px;
+    align-items:start;
+  }
+  .about-photo{
+    aspect-ratio: 4/5;
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .about-photo img{
+    width:100%; height:100%; object-fit:cover;
+  }
+  .section-label{
+    font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--rust); margin-bottom:16px; display:block;
+  }
+  .about h2{font-size:2rem; margin-bottom:24px;}
+  .about p{margin-bottom:18px; color:#46402f; max-width:560px;}
+  .hobbies{
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:24px;
+  }
+  .hobbies span{
+    font-size:0.85rem;
+    border:1px solid var(--clay);
+    color:var(--clay);
+    padding:6px 14px;
+    border-radius:20px;
+  }
+
+  /* PROJECTS */
+  .projects{
+    background:var(--olive);
+    color:var(--cream);
+    padding:100px 0;
+  }
+  .projects .section-label{color:var(--mustard);}
+  .projects h2{color:var(--cream); font-size:2rem; margin-bottom:48px;}
+  .project-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:32px;
+  }
+  .project-card{
+    background:rgba(245,237,225,0.05);
+    border:1px solid rgba(245,237,225,0.15);
+    border-radius:4px;
+    overflow:hidden;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .project-card:hover{transform:translateY(-6px); border-color:var(--mustard);}
+  .project-thumb{
+    height:200px;
+    background:linear-gradient(135deg, var(--rust), var(--mustard));
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; color:var(--olive); font-size:0.95rem; opacity:0.9;
+  }
+  .project-body{padding:24px;}
+  .project-tag{
+    font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--mustard); margin-bottom:8px; display:block;
+  }
+  .project-body h3{font-size:1.25rem; margin-bottom:10px;}
+  .project-body p{font-size:0.92rem; color:rgba(245,237,225,0.75);}
+
+  /* RESUME */
+  .resume{
+    padding:100px 0;
+    background:var(--cream);
+    text-align:center;
+  }
+  .resume h2{font-size:2rem; margin-bottom:18px;}
+  .resume p{max-width:480px; margin:0 auto 32px; color:#46402f;}
+
+  /* CONTACT / FOOTER */
+  footer{
+    background:#3a362e;
+    color:var(--cream);
+    padding:70px 0 40px;
+  }
+  footer .wrap{
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+  }
+  footer h2{font-size:1.8rem; margin-bottom:14px;}
+  footer p{color:rgba(245,237,225,0.7); margin-bottom:28px;}
+  .socials{display:flex; gap:22px; margin-bottom:48px;}
+  .socials a{
+    width:44px; height:44px; border-radius:50%;
+    border:1.5px solid rgba(245,237,225,0.4);
+    display:flex; align-items:center; justify-content:center;
+    transition:all .25s ease;
+  }
+  .socials a:hover{border-color:var(--mustard); background:rgba(217,164,65,0.12);}
+  .socials svg{width:18px; height:18px; fill:var(--cream);}
+  .copyright{font-size:0.8rem; color:rgba(245,237,225,0.4);}
+
+  @media (max-width: 760px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; background:var(--cream);
+      padding:24px 32px; gap:20px;
+      border-bottom:1px solid rgba(46,42,36,0.1);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:flex;}
+    .about-grid{grid-template-columns:1fr;}
+    .project-grid{grid-template-columns:1fr;}
+    .hero{padding:90px 0 70px;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="logo">Hannah Waldorf</a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Hannah Waldorf</h1>
+    <p class="lead">Advertising professional and creative based in Chicago.</p>
+    <a href="#projects" class="btn solid">See My Work</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo"><img src="headshot.png" alt="Hannah Waldorf"></div>
+    <div>
+      <span class="section-label">A little about me</span>
+      <h2>Balancing data with curiosity</h2>
+      <p>I'm an advertising professional with a passion for bringing ideas to life through thoughtful execution, creative problem-solving, and a keen eye for detail.</p>
+      <p>I'm currently a Digital Account Specialist at Paramount, where I manage the end-to-end execution of multi-platform advertising campaigns for national brands — from launch and optimization to reporting and cross-functional collaboration. I enjoy bringing structure to complex projects and making sure every detail comes together seamlessly.</p>
+      <p>While I love the analytical side of advertising, I'm equally drawn to creativity. I believe the best solutions come from balancing data with curiosity, and I'm always exploring new trends in marketing, technology, and design to keep learning and growing.</p>
+      <p>Outside of work, you'll usually find me behind a camera, working on a crochet project, painting, experimenting with new recipes, tending to my ever-growing collection of houseplants, or spending time with my bunny and dogs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="projects" id="projects">
+  <div class="wrap">
+    <span class="section-label">Selected work</span>
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-thumb">Campaign visual</div>
+        <div class="project-body">
+          <span class="project-tag">Advertising</span>
+          <h3>National Brand Campaign</h3>
+          <p>Replace with a short writeup of a multi-platform campaign you managed — goals, your role, and results.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">Photo series</div>
+        <div class="project-body">
+          <span class="project-tag">Photography</span>
+          <h3>Photo Series Title</h3>
+          <p>Swap in a gallery or set of images from a personal photography project.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">Painting / craft</div>
+        <div class="project-body">
+          <span class="project-tag">Visual Art</span>
+          <h3>Painting or Crochet Project</h3>
+          <p>A space to feature handmade work — paintings, crochet pieces, or other creative projects.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">Case study</div>
+        <div class="project-body">
+          <span class="project-tag">Strategy</span>
+          <h3>Campaign Optimization Case Study</h3>
+          <p>Walk through a problem you solved at Paramount — the challenge, your approach, and the outcome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="resume" id="resume">
+  <div class="wrap">
+    <span class="section-label">Experience</span>
+    <h2>Resume</h2>
+    <p>Download my full resume for details on my experience, education, and skills.</p>
+    <a href="#" class="btn">Download Resume (PDF)</a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Let's connect!</h2>
+    <p>Open to new projects, collaborations, and conversations.</p>
+    <div class="socials">
+      <a href="#" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.78-1.75-1.75s.78-1.75 1.75-1.75 1.75.78 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.07-.02-2.45-1.5-2.45-1.5 0-1.73 1.17-1.73 2.37v4.58h-3v-9h2.88v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v4.74z"/></svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 5.27c-2.99 0-5.41 2.42-5.41 5.41s2.42 5.41 5.41 5.41 5.41-2.42 5.41-5.41-2.42-5.41-5.41-5.41zm0 8.92c-1.94 0-3.51-1.57-3.51-3.51s1.57-3.51 3.51-3.51 3.51 1.57 3.51 3.51-1.57 3.51-3.51 3.51zm6.9-9.13c0 .7-.57 1.26-1.26 1.26s-1.26-.56-1.26-1.26.56-1.26 1.26-1.26 1.26.56 1.26 1.26z"/></svg>
+      </a>
+      <a href="#" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M2 4h20v16h-20v-16zm10 7l-8-5v2l8 5 8-5v-2l-8 5z"/></svg>
+      </a>
+    </div>
+    <p class="copyright">© 2026 Hannah Waldorf. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+</script>
+
+</body>
+</html>
