@@ -169,6 +169,14 @@
     background:linear-gradient(135deg, var(--rust), var(--mustard));
     display:flex; align-items:center; justify-content:center;
     font-family:'Fraunces',serif; color:var(--olive); font-size:0.95rem; opacity:0.9;
+    overflow:hidden;
+  }
+  .project-thumb img{
+    width:100%; height:100%; object-fit:cover; object-position:top center;
+  }
+  a.project-card{
+    display:block;
+    cursor:pointer;
   }
   .project-body{padding:24px;}
   .project-tag{
@@ -274,38 +282,46 @@
     <span class="section-label">Selected work</span>
     <h2>Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
+      <a href="#" class="project-card">
         <div class="project-thumb">Campaign visual</div>
         <div class="project-body">
           <span class="project-tag">Advertising</span>
           <h3>National Brand Campaign</h3>
           <p>Replace with a short writeup of a multi-platform campaign you managed — goals, your role, and results.</p>
         </div>
-      </div>
-      <div class="project-card">
+      </a>
+      <a href="#" class="project-card">
         <div class="project-thumb">Photo series</div>
         <div class="project-body">
           <span class="project-tag">Photography</span>
           <h3>Photo Series Title</h3>
           <p>Swap in a gallery or set of images from a personal photography project.</p>
         </div>
-      </div>
-      <div class="project-card">
+      </a>
+      <a href="#" class="project-card">
         <div class="project-thumb">Painting / craft</div>
         <div class="project-body">
           <span class="project-tag">Visual Art</span>
           <h3>Painting or Crochet Project</h3>
           <p>A space to feature handmade work — paintings, crochet pieces, or other creative projects.</p>
         </div>
-      </div>
-      <div class="project-card">
+      </a>
+      <a href="#" class="project-card">
         <div class="project-thumb">Case study</div>
         <div class="project-body">
           <span class="project-tag">Strategy</span>
           <h3>Campaign Optimization Case Study</h3>
           <p>Walk through a problem you solved at Paramount — the challenge, your approach, and the outcome.</p>
         </div>
-      </div>
+      </a>
+      <a href="strongtek-case-study.html" class="project-card">
+        <div class="project-thumb"><img src="strongtek-about.png" alt="StrongTek About Us page"></div>
+        <div class="project-body">
+          <span class="project-tag">Copywriting</span>
+          <h3>StrongTek</h3>
+          <p>Brought on in 2019 as marketing copywriter for StrongTek, a physical therapy and yoga equipment company. Wrote blog content and brand storytelling for their website, including their "About Us" page and product features like the Slant Board — turning product benefits into approachable, customer-focused copy.</p>
+        </div>
+      </a>
     </div>
   </div>
 </section>

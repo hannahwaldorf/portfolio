@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StrongTek — Hannah Waldorf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --olive:#4A5240;
+    --rust:#C1693C;
+    --mustard:#D9A441;
+    --cream:#F5EDE1;
+    --clay:#8B6F5C;
+    --ink:#2E2A24;
+    --max-w: 1080px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Work Sans', sans-serif;
+    color:var(--ink);
+    background:var(--cream);
+    line-height:1.6;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max-w); margin:0 auto; padding:0 32px;}
+
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--cream);
+    border-bottom:1px solid rgba(46,42,36,0.1);
+  }
+  nav.wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:22px; padding-bottom:22px;
+  }
+  .logo{font-family:'Fraunces', serif; font-size:1.3rem; color:var(--rust); font-weight:600;}
+  .back-link{font-size:0.95rem; display:flex; align-items:center; gap:6px;}
+  .back-link:hover{color:var(--rust);}
+
+  .cs-hero{
+    background:var(--olive);
+    color:var(--cream);
+    padding:80px 0 60px;
+  }
+  .section-label{
+    font-size:0.85rem; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--mustard); margin-bottom:16px; display:block;
+  }
+  .cs-hero h1{font-size:clamp(2rem, 4vw, 2.8rem); margin-bottom:16px;}
+  .cs-hero p{max-width:600px; color:rgba(245,237,225,0.85); font-size:1.05rem;}
+
+  .cs-body{padding:70px 0;}
+  .cs-image{
+    border-radius:4px;
+    overflow:hidden;
+    margin-bottom:48px;
+    border:1px solid rgba(46,42,36,0.1);
+  }
+  .cs-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    margin-bottom:48px;
+  }
+  .cs-grid h3{font-size:1.1rem; margin-bottom:12px; color:var(--rust);}
+  .cs-grid p{color:#46402f;}
+  .cs-content p{color:#46402f; margin-bottom:18px; max-width:720px;}
+  .cta-row{
+    margin-top:40px;
+    display:flex; gap:16px; flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    border:1.5px solid var(--rust);
+    color:var(--rust);
+    padding:13px 30px;
+    border-radius:2px;
+    font-size:0.95rem;
+    transition:all .25s ease;
+  }
+  .btn:hover{background:var(--rust); color:var(--cream);}
+  .btn.solid{background:var(--rust); color:var(--cream);}
+  .btn.solid:hover{background:#a8552c; border-color:#a8552c;}
+
+  footer{
+    background:#3a362e;
+    color:rgba(245,237,225,0.6);
+    padding:40px 0;
+    text-align:center;
+    font-size:0.85rem;
+  }
+
+  @media (max-width: 700px){
+    .cs-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo">Hannah Waldorf</a>
+    <a href="index.html#projects" class="back-link">&larr; Back to projects</a>
+  </nav>
+</header>
+
+<section class="cs-hero">
+  <div class="wrap">
+    <span class="section-label">Copywriting Case Study</span>
+    <h1>StrongTek</h1>
+    <p>Brand storytelling and product copywriting for a physical therapy and yoga equipment company.</p>
+  </div>
+</section>
+
+<section class="cs-body">
+  <div class="wrap">
+    <div class="cs-image">
+      <img src="strongtek-about.png" alt="StrongTek About Us page">
+    </div>
+
+    <div class="cs-grid">
+      <div>
+        <h3>Role</h3>
+        <p>Marketing Copywriter, brought on in 2019</p>
+      </div>
+      <div>
+        <h3>Scope</h3>
+        <p>Blog content, brand storytelling, product copy across the StrongTek website</p>
+      </div>
+    </div>
+
+    <div class="cs-content">
+      <p>StrongTek is a physical therapy and yoga equipment company founded by two brothers looking to build higher-quality, more affordable recovery tools than what they'd found on the market. I was brought on as their marketing copywriter to help shape a consistent, approachable brand voice across the site — from the company's origin story to individual product pages.</p>
+      <p>My work included the "About Us" page, which introduces the founders and the company's mission, and blog-style product features like the Slant Board writeup, which walks customers through the benefits of calf stretching and how the product addresses common foot and ankle pain.</p>
+      <p><em>More detail on the process, goals, and results to come.</em></p>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://www.strong-tek.com/pages/about-us" target="_blank" rel="noopener" class="btn solid">View live page on StrongTek.com</a>
+      <a href="index.html#projects" class="btn">Back to projects</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Hannah Waldorf. All rights reserved.
+</footer>
+
+</body>
+</html>
